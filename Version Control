@@ -1,0 +1,11 @@
+0.0.1
+	Basic App - Does scanning and tells you the % of max for substats.
+	You can input your current stats, but it doesn't do anything
+0.0.2
+  UI Added
+  Automatic scanning of stats included
+  Added a close button to the overlay screen
+  Bug Fixes
+    Text Alignment
+    Stat Saving
+  Added ko-fi button to support development
