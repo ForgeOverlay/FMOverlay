@@ -24,6 +24,9 @@ Import your current total stats directly from your player profile:
 ### 📈 My Stats
 View and manually edit your total stats. These are used for the comparison feature to show how equipment changes affect your build.
 
+### 🐕 Pets Live Scanning
+Live scanning refreshes the scan once every second to make it easier to bulk check pets without extra clicking.
+
 ## Installation
 
 1. Download the APK or install via Firebase App Distribution
