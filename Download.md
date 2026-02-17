@@ -43,5 +43,5 @@ Found a bug or have suggestions? Open an issue or contact via GitHub Issues or [
 
 ---
 
-**Version:** 0.0.3  
-**Last Updated:** 28th January 2026
+**Version:** 0.0.5  
+**Last Updated:** 17th February 2026
