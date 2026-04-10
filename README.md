@@ -4,6 +4,19 @@ A companion Android app for Forge Master that helps you evaluate item stats, tra
 
 ---
 
+## Installation
+
+1. Download the APK from the [Releases](https://github.com/ForgeOverlay/FMOverlay/releases) page or install via Firebase App Distribution
+2. Grant **overlay permission** when prompted
+3. Grant **screen capture permission** when first scanning
+
+---
+
+## Bug Report or Feature request
+You can fill out a form [Here](https://form.jotform.com/260985267906067)
+
+---
+
 ## Features
 
 ### 📊 Scan Items
@@ -48,19 +61,6 @@ A dedicated tab for clan management tools.
 - Automatic correction of common OCR misreads caused by the game's stylised font
 - Editable results with manual correction and delete options
 - Three-step permission flow: grant overlay → grant screen capture → start scanning
-
----
-
-## Installation
-
-1. Download the APK from the [Releases](https://github.com/ForgeOverlay/FMOverlay/releases) page or install via Firebase App Distribution
-2. Grant **overlay permission** when prompted
-3. Grant **screen capture permission** when first scanning
-
----
-
-## Bug Report or Feature request
-You can fill out a form [Here](https://form.jotform.com/260985267906067)
 
 ---
 
