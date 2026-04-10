@@ -59,6 +59,11 @@ A dedicated tab for clan management tools.
 
 ---
 
+## Bug Report or Feature request
+You can fill out a form [Here](https://form.jotform.com/260985267906067)
+
+---
+
 ## Supported Stats
 
 | Stat | Max Value |
