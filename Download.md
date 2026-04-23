@@ -13,7 +13,6 @@ Real-time item stat analysis for Forge Master with instant percentage indicators
 
 ### Download
 [Download Latest APK from Google Firebase](https://appdistribution.firebase.dev/i/f0f5fc33f12f6104)
-If you would like to receive the app and new versions of the app through Google's Firebase service, please [email me](mailto:fmoverlay@gmail.com)
 
 ### Install Steps
 1. Download the APK file
