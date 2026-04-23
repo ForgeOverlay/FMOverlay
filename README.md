@@ -6,7 +6,7 @@ A companion Android app for Forge Master that helps you evaluate item stats, tra
 
 ## Installation
 
-1. Download the APK from the [Releases](https://github.com/ForgeOverlay/FMOverlay/releases) page or install via Firebase App Distribution
+1. [Download Latest APK from Google Firebase](https://appdistribution.firebase.dev/i/f0f5fc33f12f6104)
 2. Grant **overlay permission** when prompted
 3. Grant **screen capture permission** when first scanning
 
