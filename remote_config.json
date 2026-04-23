@@ -1,0 +1,21 @@
+{
+  "version": 1,
+
+  "skillWarPoints": {
+    "Common":    125,
+    "Rare":      125,
+    "Epic":      125,
+    "Legendary": 125,
+    "Ultimate":  125,
+    "Mythic":    125
+  },
+
+  "mountWarPoints": {
+    "Common":    600,
+    "Rare":      600,
+    "Epic":      600,
+    "Legendary": 600,
+    "Ultimate":  600,
+    "Mythic":    600
+  }
+}
