@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
 
   "skillWarPoints": {
     "Common":    125,
@@ -17,5 +17,37 @@
     "Legendary": 600,
     "Ultimate":  600,
     "Mythic":    600
-  }
+  },
+
+  "mergePetWarPoints": 1250,
+
+  "mergeMountWarPoints": 600,
+
+  "maxStats": {
+    "Critical Chance": 12.0,
+    "Critical Damage": 80.0,
+    "Attack Speed":    40.0,
+    "Double Chance":   20.0,
+    "Damage":          15.0,
+    "Skill Damage":    30.0,
+    "Ranged Damage":   15.0,
+    "Melee Damage":    50.0,
+    "Block Chance":    5.0,
+    "Lifesteal":       20.0,
+    "Health Regen":    4.0,
+    "Skill Cooldown":  7.0,
+    "Health":          15.0
+  },
+
+  "eggSummonCost": 100,
+
+  "skillMaxCost": 200,
+
+  "baseCritMultiplier": 1.2,
+
+  "pvpHpMultiplier": 6.0,
+
+  "rangedHeadStartSeconds": 4.0,
+
+  "pvpTimeLimitSeconds": 60.0
 }
