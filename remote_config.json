@@ -1,6 +1,10 @@
 {
   "version": 2,
-
+  "announcement": {
+    "id": 1,
+    "title": "1.2.0 Release Notes",
+    "body": "Skills are now factored into PVP battle simulations"
+  },
   "skillWarPoints": {
     "Common":    125,
     "Rare":      125,
