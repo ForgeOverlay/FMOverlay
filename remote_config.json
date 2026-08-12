@@ -3,7 +3,7 @@
   "announcement": {
     "id": 1,
     "title": "1.2.0 Release Notes",
-    "body": "Skills are now factored into PVP battle simulations.\nAnnoucements added.\nMinor UI Changes"
+    "body": "Skills are now factored into PVP battle simulations.\nAnnoucements added.\nUI Enhancement.\nAttack Range and Move Speed added to substats and PVP Calculator."
   },
   "skillWarPoints": {
     "Common":    125,
