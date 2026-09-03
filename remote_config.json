@@ -1,5 +1,5 @@
 {
-  "version": 2,
+  "version": 3,
   "announcement": {
     "id": 1,
     "title": "1.2.0 Release Notes",
@@ -13,7 +13,6 @@
     "Ultimate":  125,
     "Mythic":    125
   },
-
   "mountWarPoints": {
     "Common":    600,
     "Rare":      600,
@@ -22,11 +21,8 @@
     "Ultimate":  600,
     "Mythic":    600
   },
-
   "mergePetWarPoints": 1250,
-
   "mergeMountWarPoints": 600,
-
   "maxStats": {
     "Critical Chance": 12.0,
     "Critical Damage": 80.0,
@@ -42,16 +38,12 @@
     "Skill Cooldown":  7.0,
     "Health":          15.0
   },
-
   "eggSummonCost": 100,
-
   "skillMaxCost": 200,
-
+  "mountSummonBaseCost": 50,
   "baseCritMultiplier": 1.2,
-
   "pvpHpMultiplier": 6.0,
-
   "rangedHeadStartSeconds": 4.0,
-
-  "pvpTimeLimitSeconds": 60.0
+  "pvpTimeLimitSeconds": 60.0,
+  "techBonusOverrides": {}
 }
