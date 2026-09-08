@@ -1,5 +1,5 @@
 {
-  "version": 3,
+  "version": 4,
   "announcement": {
     "id": 1,
     "title": "1.2.0 Release Notes",
@@ -36,7 +36,8 @@
     "Lifesteal":       20.0,
     "Health Regen":    4.0,
     "Skill Cooldown":  7.0,
-    "Health":          15.0
+    "Health":          15.0,
+    "Reflect Chance":  30.0
   },
   "eggSummonCost": 100,
   "skillMaxCost": 200,
@@ -45,5 +46,11 @@
   "pvpHpMultiplier": 6.0,
   "rangedHeadStartSeconds": 4.0,
   "pvpTimeLimitSeconds": 60.0,
+  "fairies": {
+    "mira": { "ratePerLevel": 1.0,  "sourceStep": 15.0, "cap": 80.0 },
+    "tira": { "ratePerLevel": 0.25, "sourceStep": 1.0,  "cap": 30.0 },
+    "lora": { "ratePerLevel": 0.75, "sourceStep": 10.0, "cap": 30.0 }
+  },
+  "fairyMaxLevel": 20,
   "techBonusOverrides": {}
 }
