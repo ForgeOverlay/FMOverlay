@@ -1,9 +1,9 @@
 {
   "version": 4,
   "announcement": {
-    "id": 1,
-    "title": "1.2.0 Release Notes",
-    "body": "Skills are now factored into PVP battle simulations.\nAnnoucements added.\nUI Enhancement.\nAttack Range and Move Speed added to substats and PVP Calculator."
+    "id": 2,
+    "title": "1.3.0 Release Notes",
+    "body": "Fairies included in stats and Item scanning.\nMelee/Ranged detection in Item scanning.\nResource Tracking.\nTech Scanning.\n\nPlease consider supporting development"
   },
   "skillWarPoints": {
     "Common":    125,
