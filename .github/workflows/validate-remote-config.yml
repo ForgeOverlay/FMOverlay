@@ -1,0 +1,32 @@
+name: Validate remote config
+
+# Runs on every change to remote_config.json, including edits made in GitHub's
+# web editor. The app parses the file tolerantly, so a broken edit does not crash
+# anything: players just silently keep the old values. This turns that into a
+# red cross on the commit and a failure email to whoever pushed it.
+
+on:
+  push:
+    paths:
+      - remote_config.json
+      - .github/workflows/validate-remote-config.yml
+      - .github/scripts/validate_remote_config.py
+  pull_request:
+    paths:
+      - remote_config.json
+      - .github/workflows/validate-remote-config.yml
+      - .github/scripts/validate_remote_config.py
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    name: remote_config.json
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check remote_config.json
+        run: python3 .github/scripts/validate_remote_config.py remote_config.json
