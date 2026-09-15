@@ -72,16 +72,24 @@ Tally receives them at that point:
 
 **When you tap Send report**, the form also sends:
 
-- What you type: the issue title, type of request, priority, and steps to
-  reproduce.
+- What you type: the issue title, type of request, priority and steps to
+  reproduce, plus feature details and additional comments or links if you fill
+  them in.
+- Your email address, only if you choose to enter one. It is used only to reply
+  to you about your report.
 - Any screenshots you choose to attach. A screenshot shows whatever was on your
   screen, which may include your in-game name, so check it before attaching.
 
-The form does not include your name, email address, any account details, or the
-stats stored in the app.
+The form does not include your name, any account details, or the stats stored in
+the app.
 
 Tally (Tally BV, Belgium) stores submissions on servers in the European Union.
 Tally's privacy notice: https://tally.so/help/privacy-policy
+
+To keep track of reports, each submission is copied automatically to my private
+project board on Trello (Atlassian) using Make (make.com), an automation service.
+Their privacy policies: https://www.atlassian.com/legal/privacy-policy and
+https://www.make.com/en/privacy-notice
 
 The form uses Google reCAPTCHA to block spam, so Google processes information
 such as your IP address and browser details. Google's privacy policy:
