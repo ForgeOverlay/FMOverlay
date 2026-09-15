@@ -1,0 +1,11 @@
+# This repo is PUBLIC, and remote_config.json is fetched by every installed copy
+# of Forge Master Companion. Allowlist, not blocklist: anything not named below is
+# ignored, so a stray file (app source, a keystore, a build) cannot be committed
+# here by accident. To add a new kind of file, add a "!" line for it on purpose.
+*
+!.gitignore
+!*.md
+!remote_config.json
+!Version Control
+!.github/
+!.github/**
