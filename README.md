@@ -1,19 +1,20 @@
 # Forge Master Stats Overlay
 
-A companion Android app for Forge Master that helps you evaluate item stats, track clan performance, and calculate skill war points — all in real time, entirely offline.
+A companion Android app for Forge Master that helps you evaluate item stats, track clan performance, and calculate skill war points, all in real time on your device.
 
 ---
 
 ## Installation
 
-1. [Download Latest APK from Google Firebase](https://appdistribution.firebase.dev/i/f0f5fc33f12f6104)
+1. [Get it on Google Play](https://play.google.com/store/apps/details?id=com.bobski.forgemastercompanion)
 2. Grant **overlay permission** when prompted
 3. Grant **screen capture permission** when first scanning
 
 ---
 
 ## Bug Report or Feature request
-You can fill out a form [Here](https://form.jotform.com/260985267906067)
+Open **Settings → Report a bug** in the app, which fills in your app and device details for you.
+Or use the [bug report form](https://tally.so/r/aQRPJb) directly.
 
 ---
 
@@ -101,10 +102,12 @@ Primitive · Medieval · Early-Modern · Modern · Space · Interstellar · Mult
 ## Privacy
 
 This app:
-- Does **not** collect any personal data
-- Does **not** require internet access
-- Only captures the screen when you tap SCAN / IMPORT / START SCAN
+- Does **not** collect any personal data, usage data or analytics
+- Only captures the screen when you tap SCAN / IMPORT / START SCAN, and reads it on your device
 - Stores all data locally on your device only
+- Uses the internet only to download game balance values, and to load the bug report form when you open it
+
+Full details are in the [privacy policy](privacy-policy.md).
 
 ---
 
