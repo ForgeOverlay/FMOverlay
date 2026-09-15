@@ -1,5 +1,5 @@
 {
-  "version": 4,
+  "version": 5,
   "announcement": {
     "id": 2,
     "title": "1.3.0 Release Notes",
@@ -52,5 +52,9 @@
     "lora": { "ratePerLevel": 0.75, "sourceStep": 10.0, "cap": 30.0 }
   },
   "fairyMaxLevel": 20,
-  "techBonusOverrides": {}
+  "techBonusOverrides": {},
+  "bugReport": {
+    "enabled": true,
+    "formUrl": "https://tally.so/r/aQRPJb"
+  }
 }
