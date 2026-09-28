@@ -1,9 +1,9 @@
 {
-  "version": 5,
+  "version": 6,
   "announcement": {
-    "id": 2,
-    "title": "1.3.0 Release Notes",
-    "body": "Fairies included in stats and Item scanning.\nMelee/Ranged detection in Item scanning.\nResource Tracking.\nTech Scanning.\n\nPlease consider supporting development"
+    "id": 3,
+    "title": "1.3.1 Release Notes",
+    "body": "Fairy bonuses now match the game.\nMelee/Ranged only counts for your weapon type.\nMore reliable item compare and equip.\nPet and mount stats no longer count twice.\nReport a Bug works again.\n\nPlease consider supporting development"
   },
   "skillWarPoints": {
     "Common":    125,
