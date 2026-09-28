@@ -143,7 +143,26 @@ def check_max_stats(r, path, v):
 def check_announcement(r, path, v):
     if not expect_object(r, path, v):
         return
-    unknown_keys(r, path, v, ["id", "title", "body"])
+    unknown_keys(r, path, v, ["id", "title", "body", "minVersionCode", "maxVersionCode"])
+    # Optional inclusive versionCode bounds (AnnouncementConfig.parse), 0 = no bound.
+    # The app turns a bad value into "no bound", which silently widens the audience.
+    bounds = {}
+    for name in ("minVersionCode", "maxVersionCode"):
+        if name in v:
+            bound = v[name]
+            if not is_int(bound) or bound < 0:
+                r.error("%s.%s" % (path, name),
+                        "must be a whole number, 0 or more, got %s" % describe(bound))
+            else:
+                bounds[name] = bound
+    lo, hi = bounds.get("minVersionCode", 0), bounds.get("maxVersionCode", 0)
+    if lo > 0 and hi > 0 and lo > hi:
+        r.error(path, "minVersionCode %d is above maxVersionCode %d, so no install will "
+                      "ever show this popup" % (lo, hi))
+    if lo > 0:
+        r.warn(path + ".minVersionCode",
+               "installs older than 1.3.2 (versionCode 132) ignore version bounds and "
+               "will still show this popup")
     ann_id = v.get("id", 0)
     if not is_int(ann_id) or ann_id < 0:
         r.error(path + ".id", "must be a whole number, 0 or more, got %s" % describe(ann_id))
