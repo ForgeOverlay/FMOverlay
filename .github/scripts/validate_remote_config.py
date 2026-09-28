@@ -268,6 +268,40 @@ def check_bug_report(r, path, v):
             r.error(path + ".formUrl", "must be a full https:// link, got %s" % describe(url))
 
 
+def check_forge(r, path, v):
+    # Mirrors ForgeConfig.parse in the app. The scalars fall back one at a time, but
+    # the levels table is taken whole or not at all: one bad row and the app keeps its
+    # compiled table without a word, so every fault in it is an error here.
+    if not expect_object(r, path, v):
+        return
+    unknown_keys(r, path, v, ["gemSkipPerSecond", "ascendCost", "levels"])
+    if "gemSkipPerSecond" in v:
+        positive_number(r, path + ".gemSkipPerSecond", v["gemSkipPerSecond"])
+    if "ascendCost" in v:
+        positive_int(r, path + ".ascendCost", v["ascendCost"])
+    if "levels" not in v:
+        return
+    levels = v["levels"]
+    lpath = path + ".levels"
+    if not isinstance(levels, list) or not levels:
+        r.error(lpath, "must be a non-empty array [ ... ], got %s" % describe(levels))
+        return
+    for i, row in enumerate(levels):
+        rpath = "%s[%d]" % (lpath, i)
+        if not expect_object(r, rpath, row):
+            continue
+        unknown_keys(r, rpath, row, ["level", "cost", "nodes", "seconds"])
+        expected = i + 2
+        if row.get("level") != expected:
+            r.error(rpath + ".level", "must be %d (levels run up from 2 with no gaps), got %s"
+                    % (expected, describe(row.get("level"))))
+        for field in ("cost", "nodes", "seconds"):
+            if field not in row:
+                r.error("%s.%s" % (rpath, field), "missing, the app would drop the whole table")
+            else:
+                positive_int(r, "%s.%s" % (rpath, field), row[field])
+
+
 SCHEMA = {
     "version": positive_int,
     "announcement": check_announcement,
@@ -288,6 +322,7 @@ SCHEMA = {
     "techBonusOverrides": check_tech_overrides,
     "skill_combat_overrides": check_skill_overrides,
     "bugReport": check_bug_report,
+    "forge": check_forge,
 }
 OPTIONAL_TOP_LEVEL = {"announcement", "techBonusOverrides", "skill_combat_overrides"}
 
