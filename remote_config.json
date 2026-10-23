@@ -1,5 +1,5 @@
 {
-  "version": 7,
+  "version": 8,
   "announcement": {
     "id": 3,
     "title": "1.3.1 Release Notes",
@@ -20,6 +20,14 @@
     "Legendary": 600,
     "Ultimate":  600,
     "Mythic":    600
+  },
+  "eggHatchWarPoints": {
+    "Common":    400,
+    "Rare":      1600,
+    "Epic":      3200,
+    "Legendary": 6400,
+    "Ultimate":  12800,
+    "Mythic":    25600
   },
   "mergePetWarPoints": 1250,
   "mergeMountWarPoints": 600,

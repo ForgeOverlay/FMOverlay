@@ -307,6 +307,7 @@ SCHEMA = {
     "announcement": check_announcement,
     "skillWarPoints": check_rarity_map,
     "mountWarPoints": check_rarity_map,
+    "eggHatchWarPoints": check_rarity_map,
     "mergePetWarPoints": positive_int,
     "mergeMountWarPoints": positive_int,
     "maxStats": check_max_stats,
