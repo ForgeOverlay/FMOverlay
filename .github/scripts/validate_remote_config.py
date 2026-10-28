@@ -36,8 +36,19 @@ MAX_STATS_KEYS = [
 ]
 MAX_STATS_UNPUBLISHED_OK = {"Move Speed", "Attack Range"}
 
-FAIRY_IDS = ["mira", "tira", "lora"]
+FAIRY_IDS = ["mira", "tira", "lora"]   # built in: numbers only, wiring is compiled
 FAIRY_FIELDS = ["ratePerLevel", "sourceStep", "cap"]
+# App 1.3.3+: a NEW fairy id carries its full definition. FairyConfig.newFairies
+# skips anything incomplete, so every rule below is an error, not a warning.
+FAIRY_NEW_REQUIRED = ["name", "sourceStat", "targetStat"] + FAIRY_FIELDS
+FAIRY_NEW_OPTIONAL = ["targetOnlyFromFairy"]
+# FairyModel.Fairy.KNOWN_STATS: the stats the app's scanners parse.
+FAIRY_STATS = [
+    "Critical Chance", "Critical Damage", "Attack Speed", "Double Chance", "Damage",
+    "Skill Damage", "Ranged Damage", "Melee Damage", "Block Chance", "Lifesteal",
+    "Health Regen", "Skill Cooldown", "Health", "Move Speed", "Reflect Chance",
+]
+FAIRY_ID_RE = re.compile(r"^[a-z][a-z0-9_]*$")
 
 TECH_TIERS = 5          # TechBonusCatalog.TIERS
 SKILL_MAX_LEVEL = 100   # SkillCombatData.MAX_LEVEL
@@ -176,14 +187,40 @@ def check_announcement(r, path, v):
         r.error(path, "id is %d but title or body is blank, so the popup will never show" % ann_id)
 
 
+def check_new_fairy(r, fpath, fid, fv):
+    """A fairy added by config (app 1.3.3+). Older apps ignore it."""
+    if not FAIRY_ID_RE.match(fid):
+        r.error(fpath, "a new fairy id must be lowercase letters, digits or _")
+    if not expect_object(r, fpath, fv):
+        return
+    unknown_keys(r, fpath, fv, FAIRY_NEW_REQUIRED + FAIRY_NEW_OPTIONAL)
+    for field in FAIRY_NEW_REQUIRED:
+        if field not in fv:
+            r.error("%s.%s" % (fpath, field), "required for a new fairy, the app skips it without")
+    name = fv.get("name")
+    if "name" in fv and (not isinstance(name, str) or not name.strip()):
+        r.error(fpath + ".name", "must be a non-empty string")
+    for field in ("sourceStat", "targetStat"):
+        if field in fv and fv[field] not in FAIRY_STATS:
+            r.error("%s.%s" % (fpath, field),
+                    "%s is not a stat the app reads; one of %s" % (describe(fv[field]), ", ".join(FAIRY_STATS)))
+    if fv.get("sourceStat") is not None and fv.get("sourceStat") == fv.get("targetStat"):
+        r.error(fpath, "sourceStat and targetStat must differ")
+    for field in FAIRY_FIELDS:
+        if field in fv:
+            positive_number(r, "%s.%s" % (fpath, field), fv[field])
+    if "targetOnlyFromFairy" in fv and not isinstance(fv["targetOnlyFromFairy"], bool):
+        r.error(fpath + ".targetOnlyFromFairy", "must be true or false")
+
+
 def check_fairies(r, path, v):
     if not expect_object(r, path, v):
         return
-    unknown_keys(r, path, v, FAIRY_IDS)
     for fid, fv in v.items():
-        if fid not in FAIRY_IDS:
-            continue
         fpath = "%s.%s" % (path, fid)
+        if fid not in FAIRY_IDS:
+            check_new_fairy(r, fpath, fid, fv)
+            continue
         if not expect_object(r, fpath, fv):
             continue
         unknown_keys(r, fpath, fv, FAIRY_FIELDS)
