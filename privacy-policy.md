@@ -1,11 +1,12 @@
 # Privacy Policy for Forge Master Companion
 
-**Last updated: 15 September 2026**
+**Last updated: 3 November 2026**
 
 Forge Master Companion is a free Android app developed by Bobski as a personal
 project. This policy explains what the app does with your data. The short
-version: nothing leaves your phone except a small config download, and a bug
-report if you choose to send one. Both are explained below.
+version: nothing leaves your phone except a small config download, a bug report
+if you choose to send one, and exports you choose to send to the Botski Discord
+bot. All three are explained below.
 
 ## Data the app collects
 
@@ -13,8 +14,9 @@ The app has no user accounts and sends no usage data, telemetry, or analytics
 anywhere. There is no crash reporting SDK, no advertising SDK, and no
 third-party analytics.
 
-The only time information about your device, or anything you write, leaves your
-phone is when you open the bug report form. See "Bug reports" below.
+Information about your device, or anything you write, leaves your phone only
+when you open the bug report form, or when you tap Send to Botski. See "Bug
+reports" and "Sending to Botski" below.
 
 ## Data stored on your device
 
@@ -43,7 +45,7 @@ Google Play services on your device. The recognition itself runs on your phone.
 
 ## Network requests
 
-The app connects to the internet for two things only.
+The app connects to the internet for three things only.
 
 ### Game balance values
 
@@ -101,6 +103,33 @@ User-Agent string when the form loads.
 Reports are used only to fix bugs and consider feature requests. To have a
 report you sent deleted, email the address at the bottom of this page with
 roughly when you sent it and its title.
+
+### Sending to Botski
+
+Botski is a Discord bot that tracks clan resources. Nothing is sent unless you
+link the app to it (run `/link` in Discord, then enter the code in the app) and
+then tap **Send to Botski**.
+
+**What is sent:** exactly what the matching Copy button would put on your
+clipboard: your clan's war bonuses, your tech bonuses, or your resource counts.
+Nothing else from the app, and nothing about your device.
+
+**How:** the export is encrypted on your phone so that only Botski can read it,
+then passed through a small relay I run on Cloudflare Workers. The relay holds the
+encrypted export until Botski collects it, which it does within about a minute,
+and deletes it then or after 15 minutes at the latest. It keeps a random mailbox
+number for your link and a scrambled form of a random code your phone made; it
+never learns your Discord name or ID. It briefly sees your Discord server's name
+while you link (until the code is used, 10 minutes at most), and Botski's short
+note about each import ("Imported resources: 6 lines"), which it deletes once the
+app shows it, or after 15 minutes. A link unused for 90 days is deleted.
+
+Cloudflare, as the host, sees your IP address and a standard User-Agent string.
+Cloudflare's privacy policy: https://www.cloudflare.com/privacypolicy/
+
+What Botski does with an import, such as showing your resources to your clan, is
+decided by the Discord server it is in. To stop sending, tap Disconnect in
+Settings or run `/unlink` in Discord.
 
 ### Links that open your browser
 

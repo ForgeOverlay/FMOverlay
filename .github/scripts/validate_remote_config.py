@@ -305,6 +305,21 @@ def check_bug_report(r, path, v):
             r.error(path + ".formUrl", "must be a full https:// link, got %s" % describe(url))
 
 
+def check_botski_relay_url(r, path, v):
+    # Mirrors BotskiRelayProtocol.parseRelayUrl in the app (1.3.4): anything but a plain
+    # https base URL hides the feature without a word, so it is an error here. "" is
+    # allowed and means "no relay": the Send to Botski buttons stay hidden.
+    if v == "":
+        return
+    ok = False
+    if isinstance(v, str) and v == v.strip():
+        parsed = urlparse(v)
+        ok = (parsed.scheme == "https" and bool(parsed.netloc) and " " not in v
+              and not parsed.query and not parsed.fragment)
+    if not ok:
+        r.error(path, "must be a full https:// base URL with no ? or #, or \"\", got %s" % describe(v))
+
+
 def check_forge(r, path, v):
     # Mirrors ForgeConfig.parse in the app. The scalars fall back one at a time, but
     # the levels table is taken whole or not at all: one bad row and the app keeps its
@@ -360,9 +375,10 @@ SCHEMA = {
     "techBonusOverrides": check_tech_overrides,
     "skill_combat_overrides": check_skill_overrides,
     "bugReport": check_bug_report,
+    "botskiRelayUrl": check_botski_relay_url,
     "forge": check_forge,
 }
-OPTIONAL_TOP_LEVEL = {"announcement", "techBonusOverrides", "skill_combat_overrides"}
+OPTIONAL_TOP_LEVEL = {"announcement", "techBonusOverrides", "skill_combat_overrides", "botskiRelayUrl"}
 
 
 def reject_duplicates(pairs):
