@@ -1,12 +1,13 @@
 # Privacy Policy for Forge Master Companion
 
-**Last updated: 3 November 2026**
+**Last updated: 4 November 2026**
 
 Forge Master Companion is a free Android app developed by Bobski as a personal
 project. This policy explains what the app does with your data. The short
 version: nothing leaves your phone except a small config download, a bug report
-if you choose to send one, and exports you choose to send to the Botski Discord
-bot. All three are explained below.
+if you choose to send one, exports you choose to send to the Botski Discord
+bot, and your scanned profile if you choose to send it to 1vcian.me. All four
+are explained below.
 
 ## Data the app collects
 
@@ -15,8 +16,9 @@ anywhere. There is no crash reporting SDK, no advertising SDK, and no
 third-party analytics.
 
 Information about your device, or anything you write, leaves your phone only
-when you open the bug report form, or when you tap Send to Botski. See "Bug
-reports" and "Sending to Botski" below.
+when you open the bug report form, when you tap Send to Botski, or when you tap
+Send profile. See "Bug reports", "Sending to Botski" and "Sending your profile
+to 1vcian.me" below.
 
 ## Data stored on your device
 
@@ -35,7 +37,7 @@ app removes it. None of it is uploaded anywhere.
 
 The app uses Android's MediaProjection API to capture screenshots when you
 trigger a scan. Each capture is processed in memory by on-device OCR (Google
-ML Kit and Tesseract), the text is read out, and the screenshot is discarded.
+ML Kit), the text is read out, and the screenshot is discarded.
 Captured frames are never saved to your device's storage and are never
 transmitted anywhere. Android shows a system dialog the first time the app
 uses this permission so you can refuse it.
@@ -45,7 +47,7 @@ Google Play services on your device. The recognition itself runs on your phone.
 
 ## Network requests
 
-The app connects to the internet for three things only.
+The app connects to the internet for four things only.
 
 ### Game balance values
 
@@ -131,6 +133,29 @@ What Botski does with an import, such as showing your resources to your clan, is
 decided by the Discord server it is in. To stop sending, tap Disconnect in
 Settings or run `/unlink` in Discord.
 
+### Sending your profile to 1vcian.me
+
+1vcian.me is a Forge Master fan site run by someone else, where you can keep a
+profile of your build. Nothing is sent unless you make a key on that site
+(Profile, Settings, Linked apps), add it in the app's Settings, and then tap
+**Send profile**. The app shows what it will send and asks first.
+
+**What is sent:** your key, and what the app has scanned: your active pets
+(which pet, level and bonus stats), your mount (which mount and its level), the
+levels of your equipped skills, your forge level, and the clockwinder, skill
+ticket and egg shell counts you saved. Nothing else from the app, and nothing
+about your device.
+
+**How:** over an encrypted (HTTPS) connection to the site's database, hosted by
+Supabase. The site shows you the update and you choose whether to apply it.
+Your key is stored encrypted on your phone and is never included in backups.
+
+The site's owner and Supabase, as the host, see your IP address and a standard
+User-Agent string. What the site keeps and shows is decided by 1vcian.me.
+Supabase's privacy policy: https://supabase.com/privacy
+
+To stop sending, tap Remove key in Settings, or revoke the key on the site.
+
 ### Links that open your browser
 
 Some buttons, such as the Ko-fi support link, open a website in your browser.
@@ -144,8 +169,8 @@ The app sends nothing itself; that website's own privacy policy applies.
   and to capture the screen for OCR.
 - **Post notifications**: to show the persistent notification Android requires
   while the foreground service is active.
-- **Internet**: only for the config download and the bug report form described
-  above.
+- **Internet**: only for the config download, the bug report form, Send to
+  Botski and Send profile, described above.
 
 ## Children
 

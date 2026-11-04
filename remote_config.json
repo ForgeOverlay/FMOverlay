@@ -1,5 +1,5 @@
 {
-  "version": 11,
+  "version": 12,
   "announcement": {
     "id": 5,
     "title": "1.3.3 Release Notes",
@@ -67,6 +67,9 @@
     "formUrl": "https://tally.so/r/aQRPJb"
   },
   "botskiRelayUrl": "https://botski-relay.forgemaster.workers.dev",
+  "oneVcianApiBase": "https://cwnrucmlxzxzoamyjbhq.supabase.co/rest/v1/rpc",
+  "oneVcianPublishableKey": "sb_publishable_NRMpnd1njuXOy2I_TAADQw_hRMdLPor",
+  "oneVcianSiteUrl": "https://1vcian.me/fm/?debug=1",
   "forge": {
     "gemSkipPerSecond": 0.0023,
     "ascendCost": 3000000,
