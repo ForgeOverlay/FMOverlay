@@ -1,6 +1,6 @@
 # Privacy Policy for Forge Master Companion
 
-**Last updated: 4 November 2026**
+**Last updated: 5 November 2026**
 
 Forge Master Companion is a free Android app developed by Bobski as a personal
 project. This policy explains what the app does with your data. The short
@@ -29,9 +29,13 @@ SharedPreferences and local files:
   app reads from your screen.
 - Your in-app settings (overlay positions, toggles, UI preferences).
 - The time you last sent a bug report, used to space reports out.
+- If you link them: your Botski link and your 1vcian.me key. Both are encrypted
+  with a key that never leaves your phone, and neither is ever included in a
+  backup or export.
 
 This data is sandboxed under Android's normal app-data rules. Uninstalling the
-app removes it. None of it is uploaded anywhere.
+app removes it. None of it is uploaded unless you choose to send it, as
+described under "Network requests" below.
 
 ## Screen capture and OCR
 
@@ -113,7 +117,14 @@ link the app to it (run `/link` in Discord, then enter the code in the app) and
 then tap **Send to Botski**.
 
 **What is sent:** exactly what the matching Copy button would put on your
-clipboard: your clan's war bonuses, your tech bonuses, or your resource counts.
+clipboard, one of:
+
+- your clan's tech tree war-point bonuses,
+- your tech tree bonuses,
+- your saved resource counts and what they are worth in war points. This one
+  also includes the name of the app profile and your in-game player name, so
+  Botski can match it to you.
+
 Nothing else from the app, and nothing about your device.
 
 **How:** the export is encrypted on your phone so that only Botski can read it,
@@ -140,11 +151,13 @@ profile of your build. Nothing is sent unless you make a key on that site
 (Profile, Settings, Linked apps), add it in the app's Settings, and then tap
 **Send profile**. The app shows what it will send and asks first.
 
-**What is sent:** your key, and what the app has scanned: your active pets
-(which pet, level and bonus stats), your mount (which mount and its level), the
-levels of your equipped skills, your forge level, and the clockwinder, skill
-ticket and egg shell counts you saved. Nothing else from the app, and nothing
-about your device.
+**What is sent:** your key, and the parts you tick of what the app has scanned:
+your active pets (which pet, level and bonus stats), your mount (which mount and
+its level), the levels of your equipped skills, your forge level, the
+clockwinder, skill ticket and egg shell counts you saved, your fairy and its
+level, and your clan's tech tree levels. It also carries the app's name and
+version, which the site shows you when you review the update. Nothing else from
+the app: not your in-game name, and nothing about your device.
 
 **How:** over an encrypted (HTTPS) connection to the site's database, hosted by
 Supabase. The site shows you the update and you choose whether to apply it.
