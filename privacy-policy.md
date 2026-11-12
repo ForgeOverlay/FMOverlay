@@ -1,6 +1,6 @@
 # Privacy Policy for Forge Master Companion
 
-**Last updated: 5 November 2026**
+**Last updated: 12 November 2026**
 
 Forge Master Companion is a free Android app developed by Bobski as a personal
 project. This policy explains what the app does with your data. The short
@@ -152,10 +152,10 @@ profile of your build. Nothing is sent unless you make a key on that site
 **Send profile**. The app shows what it will send and asks first.
 
 **What is sent:** your key, and the parts you tick of what the app has scanned:
-your active pets (which pet, level and bonus stats), your mount (which mount and
-its level), the levels of your equipped skills, your forge level, the
-clockwinder, skill ticket and egg shell counts you saved, your fairy and its
-level, and your clan's tech tree levels. It also carries the app's name and
+your active pets (which pet, level and bonus stats), your mount (which mount,
+its level and bonus stats), the levels of your equipped skills, your forge
+level, the clockwinder, skill ticket and egg shell counts you saved, your fairy
+and its level, your tech tree bonus totals, and your clan's tech tree levels. It also carries the app's name and
 version, which the site shows you when you review the update. Nothing else from
 the app: not your in-game name, and nothing about your device.
 
