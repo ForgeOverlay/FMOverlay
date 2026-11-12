@@ -320,6 +320,22 @@ def check_botski_relay_url(r, path, v):
         r.error(path, "must be a full https:// base URL with no ? or #, or \"\", got %s" % describe(v))
 
 
+def check_botski_key_pins(r, path, v):
+    # Mirrors RemoteConfigManager in the app (1.3.4): the Botski public keys the app
+    # accepts, each a lowercase hex SHA-256 (BotskiRelayProtocol.keyPin). [] means no
+    # check. The app keeps a mistyped pin as written, so it matches no key and EVERY
+    # link and send is refused: any entry that is not 64 lowercase hex is an error.
+    if not isinstance(v, list):
+        r.error(path, "must be an array [ ... ] of pins, or [], got %s" % describe(v))
+        return
+    for i, pin in enumerate(v):
+        if not isinstance(pin, str) or not re.fullmatch(r"[0-9a-f]{64}", pin):
+            r.error("%s[%d]" % (path, i),
+                    "must be 64 lowercase hex characters, got %s" % describe(pin))
+    if len(set(map(str, v))) != len(v):
+        r.error(path, "has the same pin twice")
+
+
 def check_onevcian_publishable_key(r, path, v):
     # Mirrors RemoteConfigManager in the app (1.3.4): the site's PUBLIC apikey (it ships
     # in 1vcian's own web page), not a secret. Blank or containing whitespace hides the
@@ -398,6 +414,7 @@ SCHEMA = {
     "skill_combat_overrides": check_skill_overrides,
     "bugReport": check_bug_report,
     "botskiRelayUrl": check_botski_relay_url,
+    "botskiKeyPins": check_botski_key_pins,
     # 1vcian profile push (1.3.4). The API base uses the relay's check: the app parses
     # both with BotskiRelayProtocol.parseRelayUrl.
     "oneVcianApiBase": check_botski_relay_url,
@@ -406,6 +423,7 @@ SCHEMA = {
     "forge": check_forge,
 }
 OPTIONAL_TOP_LEVEL = {"announcement", "techBonusOverrides", "skill_combat_overrides", "botskiRelayUrl",
+                      "botskiKeyPins",
                       "oneVcianApiBase", "oneVcianPublishableKey", "oneVcianSiteUrl"}
 
 
