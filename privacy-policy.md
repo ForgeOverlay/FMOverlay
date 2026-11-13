@@ -1,6 +1,6 @@
 # Privacy Policy for Forge Master Companion
 
-**Last updated: 12 November 2026**
+**Last updated: 13 November 2026**
 
 Forge Master Companion is a free Android app developed by Bobski as a personal
 project. This policy explains what the app does with your data. The short
@@ -144,6 +144,11 @@ What Botski does with an import, such as showing your resources to your clan, is
 decided by the Discord server it is in. To stop sending, tap Disconnect in
 Settings or run `/unlink` in Discord.
 
+To have what Botski has stored from your imports deleted, email the address at
+the bottom of this page with your in-game name and your Discord server's name,
+and it will be removed. The relay needs no request: it deletes everything on
+its own as described above.
+
 ### Sending your profile to 1vcian.me
 
 1vcian.me is a Forge Master fan site run by someone else, where you can keep a
@@ -168,6 +173,8 @@ User-Agent string. What the site keeps and shows is decided by 1vcian.me.
 Supabase's privacy policy: https://supabase.com/privacy
 
 To stop sending, tap Remove key in Settings, or revoke the key on the site.
+Anything already applied to your profile on 1vcian.me is kept by that site, not
+by this app, so you change or delete it there.
 
 ### Links that open your browser
 
