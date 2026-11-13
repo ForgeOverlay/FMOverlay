@@ -70,7 +70,7 @@
   "botskiKeyPins": ["6b2c2e6c37381c6c15054b92a8c936cec8e3c75535aaa5ba9aef4ce820e9617b"],
   "oneVcianApiBase": "https://cwnrucmlxzxzoamyjbhq.supabase.co/rest/v1/rpc",
   "oneVcianPublishableKey": "sb_publishable_NRMpnd1njuXOy2I_TAADQw_hRMdLPor",
-  "oneVcianSiteUrl": "https://1vcian.me/fm/?debug=1",
+  "oneVcianSiteUrl": "https://1vcian.me/fm/",
   "forge": {
     "gemSkipPerSecond": 0.0023,
     "ascendCost": 3000000,
